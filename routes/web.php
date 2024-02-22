@@ -8,6 +8,7 @@ use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\UpdatePasswordController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\PostsController;
 use App\Http\Controllers\Frontend\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,10 +36,6 @@ Route::middleware(['guest'])->group(function () {
     // For register
     Route::post('/register', [RegisterController::class, 'register'])->name('register');
 
-    // For forgot password
-    Route::get('/forgot-password', [ForgetPasswordController::class, 'showForgotForm'])->name('forgot_password');
-    Route::post('/forgot-password', [ForgetPasswordController::class, 'forgot_password'])->name('forgot_password');
-
     // For reset password
     // Route::get('/reset-password/{token}', [ResetPasswordController::class, 'reset_password'])->name('reset_password');
 
@@ -59,6 +56,11 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/change-password', [ChangePasswordController::class, 'changePassword'])->name('change_password');
     // For logout
     Route::get('/logout', [LogoutController::class, 'logout'])->name('logout');
+
+    // For posts
+    Route::get('/posts', [PostsController::class, 'posts'])->name('posts');
+    Route::get('/add-new-post', [PostsController::class, 'add_new_post'])->name('add_new_post');
+    // For posts
 });
 
 
@@ -70,3 +72,8 @@ Route::get('/reset-password/{token}/{email}', [ResetPasswordController::class, '
 Route::post('/password/update', [UpdatePasswordController::class, 'updatePassword'])
     ->name('password.update')
     ->middleware('guest');
+
+
+// For forgot password
+Route::get('/forgot-password', [ForgetPasswordController::class, 'showForgotForm'])->name('forgot_password');
+Route::post('/forgot-password', [ForgetPasswordController::class, 'forgot_password'])->name('forgot_password');

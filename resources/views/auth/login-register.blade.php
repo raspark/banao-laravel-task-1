@@ -44,7 +44,8 @@
                                         <img src="assets/images/logo.png" height="50" alt="logo"
                                             class="auth-logo">
                                     </a>
-                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started Geeks N Weebs</h4>
+                                    <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started Geeks N Weebs
+                                    </h4>
                                     <p class="text-muted  mb-0">Sign in to continue to Geeks N Weebs.</p>
                                 </div>
                             </div>
@@ -69,7 +70,8 @@
                                                 <label class="form-label" for="email">Email</label>
                                                 <div class="input-group">
                                                     <input type="text" class="form-control" name="email"
-                                                        id="email" placeholder="Enter email" value="{{ \Cookie::get('email', '') }}" required>
+                                                        id="email" placeholder="Enter email"
+                                                        value="{{ \Cookie::get('email', '') }}" required>
                                                 </div>
                                             </div><!--end form-group-->
 
@@ -86,7 +88,8 @@
                                                 <div class="col-sm-6">
                                                     <div class="custom-control custom-switch switch-success">
                                                         <input type="checkbox" class="custom-control-input"
-                                                            id="customSwitchSuccess" name="rem" {{ \Cookie::get('email') ? 'checked' : '' }}>
+                                                            id="customSwitchSuccess" name="rem"
+                                                            {{ \Cookie::get('email') ? 'checked' : '' }}>
                                                         <label class="form-label text-muted"
                                                             for="customSwitchSuccess">Remember me</label>
                                                     </div>
@@ -119,9 +122,15 @@
                                         </div>
                                         <div class="btn-group w-100">
                                             <a href="{{ route('social.login', 'google') }}"
-                                                class="btn btn-sm btn-outline-secondary"><img src="{{ asset('assets/images/icons8-google-48.png') }}" width="25" alt=""><span class="">Google</span></a>
+                                                class="btn btn-sm btn-outline-secondary"><img
+                                                    src="{{ asset('assets/images/icons8-google-48.png') }}"
+                                                    width="25" alt=""><span
+                                                    class="">Google</span></a>
                                             <a href="{{ route('social.login', 'github') }}"
-                                                class="btn btn-sm btn-outline-secondary"><img src="{{ asset('assets/images/icons8-github-48.png') }}" width="25" alt=""><span class="">Github</span></a>
+                                                class="btn btn-sm btn-outline-secondary"><img
+                                                    src="{{ asset('assets/images/icons8-github-48.png') }}"
+                                                    width="25" alt=""><span
+                                                    class="">Github</span></a>
                                         </div>
                                     </div>
                                     <div class="tab-pane px-3 pt-3" id="Register_Tab" role="tabpanel">
@@ -156,9 +165,9 @@
                                             <div class="form-group mb-2">
                                                 <label class="form-label" for="conf_password">Confirm Password</label>
                                                 <div class="input-group">
-                                                    <input type="password" class="form-control" name="password_confirmation"
-                                                        id="cpassword" placeholder="Enter Confirm Password"
-                                                        minlength="8" required>
+                                                    <input type="password" class="form-control"
+                                                        name="password_confirmation" id="cpassword"
+                                                        placeholder="Enter Confirm Password" minlength="8" required>
                                                 </div>
                                             </div><!--end form-group-->
 
@@ -326,10 +335,11 @@
                         method: 'POST',
                         data: $("#login-form").serialize(),
                         success: function(response) {
-                            if (response === 'login') {
-                                window.location = '/';
+                            if (response.status === 'success') {
+                                // Redirect to the home page
+                                window.location.href = response.redirect;
                             } else {
-                                $("#loginAlertMsg").html(response);
+                                $("#loginAlertMsg").html(response.message);
                             }
                         },
                         error: function(jqXHR, textStatus, errorThrown) {

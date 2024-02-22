@@ -1,40 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
-        {{-- title --}}
         @yield('title')
-        {{-- title --}}
     </title>
+    {{-- Included meta tags --}}
+    @include('frontend.layouts.partials.meta')
+    {{-- Included meta tags --}}
 
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{ asset('assets/images/favicon-32x32.png') }}">
 
-    {{-- included styles/css --}}
+    {{-- Page specific styles cdns --}}
+    @yield('page-specific-styles-cdns')
+    {{-- Page specific styles cdns --}}
+
+    {{-- Included styles --}}
     @include('frontend.layouts.partials.styles')
-    {{-- included styles/css --}}
+    {{-- Included styles --}}
+
 </head>
 
-<body>
-    {{-- included navbar --}}
-    @include('frontend.layouts.partials.navbar')
-    {{-- included navbar --}}
+<body class="">
+    {{-- Included left sidebar --}}
+    @include('frontend.layouts.partials.left-sidenav')
+    {{-- Included left sidebar --}}
 
-    {{-- main content --}}
-    @yield('main-content')
-    {{-- main content --}}
 
-    {{-- included scripts --}}
+    <div class="page-wrapper">
+        {{-- Included top bar --}}
+        @include('frontend.layouts.partials.topbar')
+        {{-- Included top bar --}}
+
+        <!-- Page Content-->
+        <div class="page-content">
+            {{-- page content --}}
+            @yield('main-content')
+            {{-- page content --}}
+
+            @include('frontend.layouts.partials.footer')
+        </div>
+        <!-- end page content -->
+    </div>
+    <!-- end page-wrapper -->
+
+    {{-- Included custom modals --}}
+    @yield('custom-modals')
+    {{-- Included custom modals --}}
+
+    {{-- Included scripts --}}
     @include('frontend.layouts.partials.scripts')
-    {{-- included scripts --}}
+    {{-- Included scripts --}}
 
-    {{-- custom js --}}
+    {{-- Page specific scripts cdns --}}
+    @yield('page-specific-scripts-cdns')
+    {{-- Page specific scripts cdns --}}
+
+    {{-- Included custom scripts --}}
     @yield('custom-scripts')
-    {{-- custom js --}}
+    {{-- Included custom scripts --}}
 </body>
-
 </html>
-<!-- footer  -->

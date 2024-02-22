@@ -27,6 +27,8 @@ class User extends Authenticatable
         'provider_token',
         'avatar',
         'email_verified_at',
+        'tagline',
+        'about',
     ];
 
     /**
@@ -48,4 +50,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+
+    // relationship between the User and Task models
+    public function tasks()
+    {
+        return $this->hasMany(Task::class);
+    }
 }

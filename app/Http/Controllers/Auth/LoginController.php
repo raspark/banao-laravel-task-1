@@ -30,14 +30,7 @@ class LoginController extends Controller
         // Attempt to log the user in
         if (Auth::attempt($credentials, $remember)) {
             // Authentication passed successfully and the user is logged in
-            $response = response()->json('login');
-
-            // If the user wants to be remembered, add a cookie to the response
-            if ($remember) {
-                $response->cookie('email', $request->input('email'), 60 * 24 * 7); // Cookie expires after 7 days
-            }
-
-            return $response;
+            return response()->json(['status' => 'success', 'message' => 'Signed in successfully.', 'redirect' => route('home')]);
         } else {
             // Authentication failed. Return an error response
             return response()->json('Incorrect credentials!! Please check email and password.', 401);
@@ -79,7 +72,7 @@ class LoginController extends Controller
                     Auth::login($user, true);
 
                     // Redirect the user to the home page
-                    return redirect('/');
+                    return redirect('/')->with('success', 'Signed in successfully.');
                 }
             } else {
                 // If the user doesn't exist, create a new user
@@ -116,7 +109,7 @@ class LoginController extends Controller
                 Auth::login($user, true); // true means "remember me"
 
                 // Redirect the user to the home page
-                return redirect('/');
+                return redirect('/')->with('success', 'Signed in successfully.');
             }
         } catch (\Exception $e) {
             // If there's an error, redirect back with the error message

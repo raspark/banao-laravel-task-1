@@ -1,17 +1,13 @@
-<!-- Bootstrap 4 CSS CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
-<!-- Fontawesome CSS CDN -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+<!-- jvectormap -->
+<link href="{{ asset('plugins/jvectormap/jquery-jvectormap-2.0.2.css') }}" rel="stylesheet">
 
-<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
-<style>
-    @import url("https://fonts.googleapis.com/css?family=Maven+Pro:400,500,600,700,800,900&display=swap");
+<!-- Sweet Alert -->
+<link href="{{ asset('plugins/sweet-alert2/sweetalert2.min.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('plugins/animate/animate.css') }}" rel="stylesheet" type="text/css">
 
-    * {
-        font-family: 'Maven Pro', sans-serif;
-    }
-
-    th {
-        text-align: center !important;
-    }
-</style>
+<!-- App css -->
+<link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/metisMenu.min.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />

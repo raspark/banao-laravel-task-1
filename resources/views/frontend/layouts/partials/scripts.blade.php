@@ -1,6 +1,19 @@
-{{-- Jquery --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-{{-- Bootstrap 4 JS --}}
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-{{-- Sweetalert2 --}}
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- jQuery  -->
+<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('assets/js/metismenu.min.js') }}"></script>
+<script src="{{ asset('assets/js/waves.js') }}"></script>
+<script src="{{ asset('assets/js/feather.min.js') }}"></script>
+<script src="{{ asset('assets/js/simplebar.min.js') }}"></script>
+<script src="{{ asset('assets/js/moment.js') }}"></script>
+<script src="{{ asset('plugins/daterangepicker/daterangepicker.js') }}"></script>
+
+<!-- Sweet-Alert  -->
+<script src="{{ asset('plugins/sweet-alert2/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('assets/pages/jquery.sweet-alert.init.js') }}"></script>
+
+<script src="{{ asset('plugins/jvectormap/jquery-jvectormap-2.0.2.min.js') }}"></script>
+<script src="{{ asset('plugins/jvectormap/jquery-jvectormap-us-aea-en.js') }}"></script>
+
+<!-- App js -->
+<script src="{{ asset('assets/js/app.js') }}"></script>
