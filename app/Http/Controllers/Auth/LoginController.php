@@ -30,7 +30,7 @@ class LoginController extends Controller
         // Attempt to log the user in
         if (Auth::attempt($credentials, $remember)) {
             // Authentication passed successfully and the user is logged in
-            return response()->json(['status' => 'success', 'message' => 'Signed in successfully.', 'redirect' => route('home')]);
+            return response()->json(['status' => 'success', 'message' => 'Signed in successfully.', 'redirect' => route('admin.dashboard')]);
         } else {
             // Authentication failed. Return an error response
             return response()->json('Incorrect credentials!! Please check email and password.', 401);
@@ -55,7 +55,7 @@ class LoginController extends Controller
                 if ($user->password) {
                     // If they have a password, they registered using email/password
                     // Redirect them to the login page with an error message
-                    return redirect()->route('login-register')->withErrors([
+                    return redirect()->route('admin.login-register')->withErrors([
                         'email' => 'The email address is already registered. Please login with your credentials.',
                     ]);
                 } else {
@@ -63,7 +63,7 @@ class LoginController extends Controller
                     // Check if the provider is the same as the one they're trying to log in with
                     if ($user->provider !== $provider) {
                         // If it's not, prevent the new social login and show an error message
-                        return redirect()->route('login-register')->withErrors([
+                        return redirect()->route('admin.login-register')->withErrors([
                             'email' => 'This email address is already associated with a ' . ucfirst($user->provider) . ' account.',
                         ]);
                     }
@@ -71,8 +71,8 @@ class LoginController extends Controller
                     // If the provider is the same, log them in
                     Auth::login($user, true);
 
-                    // Redirect the user to the home page
-                    return redirect('/')->with('success', 'Signed in successfully.');
+                    // Redirect the user to the dashboard page
+                    return redirect()->route('admin.dashboard')->with('success', 'Signed in successfully.');
                 }
             } else {
                 // If the user doesn't exist, create a new user
@@ -108,12 +108,12 @@ class LoginController extends Controller
                 // Log the user in
                 Auth::login($user, true); // true means "remember me"
 
-                // Redirect the user to the home page
-                return redirect('/')->with('success', 'Signed in successfully.');
+                // Redirect the user to the dashboard page
+                return redirect()->route('admin.dashboard')->with('success', 'Signed in successfully.');
             }
         } catch (\Exception $e) {
             // If there's an error, redirect back with the error message
-            return redirect()->route('login-register')->withErrors([
+            return redirect()->route('admin.login-register')->withErrors([
                 'error' => 'There was an error with the social login. Please try again.',
             ]);
         }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -9,10 +9,10 @@ class PostsController extends Controller
 {
     public function posts()
     {
-        return view('frontend.pages.posts.index');
+        return view('backend.pages.posts.index');
     }
     public function add_new_post()
     {
-        return view('frontend.pages.posts.add-new');
+        return view('backend.pages.posts.add-new');
     }
 }

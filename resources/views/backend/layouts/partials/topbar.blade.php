@@ -22,7 +22,7 @@
                 </div>
             </li>
 
-            <li class="dropdown notification-list">
+            {{-- <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle arrow-none waves-light waves-effect"
                     data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false"
                     aria-expanded="false">
@@ -55,7 +55,7 @@
                             <small class="float-end text-muted ps-2">10 min ago</small>
                             <div class="media">
                                 <div class="avatar-md bg-soft-primary">
-                                    <img src="assets/images/users/user-4.jpg" alt=""
+                                    <img src="{{ asset('assets/images/users/user-4.jpg') }}" alt=""
                                         class="thumb-sm rounded-circle">
                                 </div>
                                 <div class="media-body align-self-center ms-2 text-truncate">
@@ -83,7 +83,7 @@
                             <small class="float-end text-muted ps-2">1 hr ago</small>
                             <div class="media">
                                 <div class="avatar-md bg-soft-primary">
-                                    <img src="assets/images/users/user-5.jpg" alt=""
+                                    <img src="{{ asset('assets/images/users/user-5.jpg') }}" alt=""
                                         class="thumb-sm rounded-circle">
                                 </div>
                                 <div class="media-body align-self-center ms-2 text-truncate">
@@ -112,7 +112,7 @@
                         View all <i class="fi-arrow-right"></i>
                     </a>
                 </div>
-            </li>
+            </li> --}}
 
             <li class="dropdown">
                 <a class="nav-link dropdown-toggle waves-effect waves-light nav-user"
@@ -123,12 +123,12 @@
                         class="rounded-circle thumb-xs" />
                 </a>
                 <div class="dropdown-menu dropdown-menu-end">
-                    <a class="dropdown-item" href="{{ route('profile') }}"><i data-feather="user"
+                    <a class="dropdown-item" href="{{ route('admin.profile') }}"><i data-feather="user"
                             class="align-self-center icon-xs icon-dual me-1"></i> Profile</a>
                     <a class="dropdown-item" href="apps-contact-list.html"><i data-feather="users"
                             class="align-self-center icon-xs icon-dual me-1"></i> Contacts</a>
                     <div class="dropdown-divider mb-0"></div>
-                    <a class="dropdown-item" href="{{ route('logout') }}"><i data-feather="power"
+                    <a class="dropdown-item" href="{{ route('admin.logout') }}"><i data-feather="power"
                             class="align-self-center icon-xs icon-dual me-1"></i> Logout</a>
                 </div>
             </li>
@@ -142,8 +142,8 @@
             </li>
             <li class="creat-btn">
                 <div class="nav-link">
-                    <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
-                            class="fas fa-plus me-2"></i>New Task</a>
+                    {{-- <a class=" btn btn-sm btn-soft-primary" href="#" role="button"><i
+                            class="fas fa-plus me-2"></i>New Task</a> --}}
                 </div>
             </li>
         </ul>

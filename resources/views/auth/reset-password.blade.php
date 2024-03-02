@@ -39,7 +39,7 @@
                         <div class="card">
                             <div class="card-body p-0 auth-header-box">
                                 <div class="text-center p-3">
-                                    <a href="{{ route('home') }}" class="logo logo-admin">
+                                    <a href="{{ route('admin.dashboard') }}" class="logo logo-admin">
                                         <img src="{{ asset('assets/images/logo.png') }}" height="50" alt="logo"
                                             class="auth-logo">
                                     </a>
@@ -85,7 +85,7 @@
                                         </div><!--end col-->
                                     </div> <!--end form-group-->
                                 </form><!--end form-->
-                                <p class="text-muted mb-0 mt-3">Remember It ? <a href="{{ route('login-register') }}"
+                                <p class="text-muted mb-0 mt-3">Remember It ? <a href="{{ route('admin.login-register') }}"
                                         class="text-primary ms-2">Log in here</a></p>
                             </div>
                             <div class="card-body bg-light-alt text-center">

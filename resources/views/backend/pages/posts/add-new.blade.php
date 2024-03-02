@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('backend.layouts.master')
 
 {{-- title --}}
 @section('title')

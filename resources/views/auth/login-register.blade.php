@@ -40,8 +40,8 @@
                         <div class="card">
                             <div class="card-body p-0 auth-header-box">
                                 <div class="text-center p-3">
-                                    <a href="{{ route('home') }}" class="logo logo-admin">
-                                        <img src="assets/images/logo.png" height="50" alt="logo"
+                                    <a href="{{ route('admin.dashboard') }}" class="logo logo-admin">
+                                        <img src="{{ asset('assets/images/logo.png') }}" height="50" alt="logo"
                                             class="auth-logo">
                                     </a>
                                     <h4 class="mt-3 mb-1 fw-semibold text-white font-18">Let's Get Started Geeks N Weebs
@@ -95,7 +95,7 @@
                                                     </div>
                                                 </div><!--end col-->
                                                 <div class="col-sm-6 text-end">
-                                                    <a href="{{ route('forgot_password') }}"
+                                                    <a href="{{ route('admin.forgot_password') }}"
                                                         class="text-muted font-13"><i class="dripicons-lock"></i> Forgot
                                                         password?</a>
                                                 </div><!--end col-->
@@ -121,12 +121,12 @@
                                             <h6 class="mb-3">Or Login With</h6>
                                         </div>
                                         <div class="btn-group w-100">
-                                            <a href="{{ route('social.login', 'google') }}"
+                                            <a href="{{ route('admin.social.login', 'google') }}"
                                                 class="btn btn-sm btn-outline-secondary"><img
                                                     src="{{ asset('assets/images/icons8-google-48.png') }}"
                                                     width="25" alt=""><span
                                                     class="">Google</span></a>
-                                            <a href="{{ route('social.login', 'github') }}"
+                                            <a href="{{ route('admin.social.login', 'github') }}"
                                                 class="btn btn-sm btn-outline-secondary"><img
                                                     src="{{ asset('assets/images/icons8-github-48.png') }}"
                                                     width="25" alt=""><span
@@ -280,13 +280,13 @@
                     } else {
                         $("#passError").text('');
                         $.ajax({
-                            url: '/register',
+                            url: '{{ route('admin.register') }}',
                             method: 'POST',
                             data: $('#register-form').serialize(),
                             success: function(response) {
                                 // If the registration was successful, redirect the user to the home page
                                 if (response === 'register') {
-                                    window.location = '/';
+                                    window.location = '{{ route('admin.dashboard') }}';
                                 } else {
                                     // If the registration was not successful, display the error -- here I can use custom error message with custom responses
                                     $("#regAlertMsg").html(response);
@@ -331,7 +331,7 @@
                     e.preventDefault();
 
                     $.ajax({
-                        url: '/login',
+                        url: '{{ route('admin.login') }}',
                         method: 'POST',
                         data: $("#login-form").serialize(),
                         success: function(response) {

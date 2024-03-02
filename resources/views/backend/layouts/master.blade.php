@@ -5,7 +5,7 @@
         @yield('title')
     </title>
     {{-- Included meta tags --}}
-    @include('frontend.layouts.partials.meta')
+    @include('backend.layouts.partials.meta')
     {{-- Included meta tags --}}
 
     <!-- App favicon -->
@@ -16,20 +16,29 @@
     {{-- Page specific styles cdns --}}
 
     {{-- Included styles --}}
-    @include('frontend.layouts.partials.styles')
+    @include('backend.layouts.partials.styles')
     {{-- Included styles --}}
 
 </head>
 
 <body class="">
+
+    {{-- Preloader for ajax --}}
+    <div id="overlay">
+        <div class="cv-spinner">
+            <span class="spinner"></span>
+        </div>
+    </div>
+    {{-- Preloader for ajax --}}
+
     {{-- Included left sidebar --}}
-    @include('frontend.layouts.partials.left-sidenav')
+    @include('backend.layouts.partials.left-sidenav')
     {{-- Included left sidebar --}}
 
 
     <div class="page-wrapper">
         {{-- Included top bar --}}
-        @include('frontend.layouts.partials.topbar')
+        @include('backend.layouts.partials.topbar')
         {{-- Included top bar --}}
 
         <!-- Page Content-->
@@ -38,7 +47,7 @@
             @yield('main-content')
             {{-- page content --}}
 
-            @include('frontend.layouts.partials.footer')
+            @include('backend.layouts.partials.footer')
         </div>
         <!-- end page content -->
     </div>
@@ -49,7 +58,7 @@
     {{-- Included custom modals --}}
 
     {{-- Included scripts --}}
-    @include('frontend.layouts.partials.scripts')
+    @include('backend.layouts.partials.scripts')
     {{-- Included scripts --}}
 
     {{-- Page specific scripts cdns --}}

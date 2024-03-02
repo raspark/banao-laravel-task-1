@@ -18,6 +18,6 @@ class LogoutController extends Controller
         // Delete the 'email' cookie
         $cookie = Cookie::forget('email');
         // Redirect to the login page with the 'email' cookie deleted
-        return redirect('/login-register')->withCookie($cookie);
+        return redirect()->route('admin.login-register')->withCookie($cookie);
     }
 }

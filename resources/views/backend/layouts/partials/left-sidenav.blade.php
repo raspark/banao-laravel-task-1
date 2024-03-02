@@ -2,8 +2,8 @@
 <div class="left-sidenav">
     <!-- LOGO -->
     <div class="brand">
-        <a href="{{ route('home') }}" class="logo">
-                <img src="assets/images/logo.png" alt="logo-large" class="" width="50">
+        <a href="{{ route('admin.dashboard') }}" class="logo">
+                <img src="{{ asset('assets/images/logo.png') }}" alt="logo-large" class="" width="50">
         </a>
     </div>
     <!--end logo-->
@@ -11,7 +11,7 @@
         <ul class="metismenu left-sidenav-menu">
             {{-- <li class="menu-label mt-0">Main</li> --}}
             <li>
-                <a href="{{ route('home') }}"><i data-feather="layers"
+                <a href="{{ route('admin.dashboard') }}"><i data-feather="layers"
                         class="align-self-center menu-icon"></i><span>Dashboard</span></a>
             </li>
             {{-- <li>
@@ -36,10 +36,6 @@
                                 class="ti-control-record"></i>All Tasks</a></li>
                     <li class="nav-item"><a class="nav-link" href="#"><i
                                 class="ti-control-record"></i>Add New</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i
-                                class="ti-control-record"></i>Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#"><i
-                                class="ti-control-record"></i>Tags</a></li>
                 </ul>
             </li>
             {{-- Tasks --}}
@@ -51,13 +47,13 @@
                         class="align-self-center menu-icon"></i><span>Posts</span><span class="menu-arrow"><i
                             class="mdi mdi-chevron-right"></i></span></a>
                 <ul class="nav-second-level" aria-expanded="false">
-                    <li class="nav-item"><a class="nav-link" href="{{ route('posts') }}"><i
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.posts') }}"><i
                                 class="ti-control-record"></i>All Posts</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('add_new_post') }}"><i
+                    <li class="nav-item"><a class="nav-link" href="{{ route('admin.add_new_post') }}"><i
                                 class="ti-control-record"></i>Add New</a></li>
-                    <li class="nav-item"><a class="nav-link" href="apps-calendar.html"><i
+                    <li class="nav-item"><a class="nav-link" href="#"><i
                                 class="ti-control-record"></i>Categories</a></li>
-                    <li class="nav-item"><a class="nav-link" href="apps-files.html"><i
+                    <li class="nav-item"><a class="nav-link" href="#"><i
                                 class="ti-control-record"></i>Tags</a></li>
                 </ul>
             </li>
@@ -65,7 +61,7 @@
 
             {{-- Comments --}}
             <li>
-                <a href="{{ route('home') }}"><i data-feather="layers"
+                <a href="{{ route('admin.dashboard') }}"><i data-feather="layers"
                         class="align-self-center menu-icon"></i><span>Comments</span></a>
             </li>
             {{-- Comments --}}

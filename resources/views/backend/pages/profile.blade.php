@@ -1,4 +1,4 @@
-@extends('frontend.layouts.master')
+@extends('backend.layouts.master')
 
 {{-- title --}}
 @section('title')
@@ -40,7 +40,7 @@
                                             <span class="dastone-profile_main-pic-change">
                                                 <i class="fas fa-camera"></i>
                                             </span>
-                                            <form id="profileForm" action="{{ route('profile.update') }}" method="post"
+                                            <form id="profileForm" action="{{ route('admin.profile.update') }}" method="post"
                                                 enctype="multipart/form-data">
                                                 @csrf
                                                 <input type="file" id="fileInput" name="photo" style="display: none;">
@@ -123,7 +123,7 @@
                                         </div> <!--end row-->
                                     </div><!--end card-header-->
                                     <div class="card-body">
-                                        <form action="{{ route('profile.update') }}" method="POST">
+                                        <form action="{{ route('admin.profile.update') }}" method="POST">
                                             @csrf
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center"
@@ -235,14 +235,14 @@
                                         <h4 class="card-title">Change Password</h4>
                                     </div><!--end card-header-->
                                     <div class="card-body">
-                                        <form action="{{ route('change_password') }}" method="POST">
+                                        <form action="{{ route('admin.change_password') }}" method="POST">
                                             @csrf
                                             <div class="form-group row">
                                                 <label class="col-xl-3 col-lg-3 text-end mb-lg-0 align-self-center">Current
                                                     Password</label>
                                                 <div class="col-lg-9 col-xl-8">
                                                     <input class="form-control" name="curpass" id="curpass" type="password" placeholder="Password">
-                                                    <a href="{{ route('forgot_password') }}"
+                                                    <a href="{{ route('admin.forgot_password') }}"
                                                         class="text-primary font-12">Forgot password ?</a>
                                                 </div>
                                             </div>

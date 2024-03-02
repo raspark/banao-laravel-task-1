@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -14,7 +14,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user(); // Get the currently authenticated user
-        return view('frontend.pages.profile', ['user' => $user]);
+        return view('backend.pages.profile', ['user' => $user]);
     }
 
     // Update profile

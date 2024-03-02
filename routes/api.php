@@ -25,6 +25,10 @@ Route::get('/test', function () {
 
 Route::middleware(['check.api.key'])->group(function () {
     // Todo Api routes
-    Route::post('/todo/add', [TaskController::class, 'store'])->name('task.store');
-    Route::post('todo/status', [TaskController::class, 'updateStatus'])->name('task.updateStatus');
+    Route::group(['prefix' => 'todo', 'as' => 'task.'], function () {
+        Route::get('/', [TaskController::class, 'index'])->name('index');
+        Route::post('/add', [TaskController::class, 'store'])->name('store');
+        Route::post('/status', [TaskController::class, 'updateStatus'])->name('updateStatus');
+        Route::post('/delete', [TaskController::class, 'destroy'])->name('destroy');
+    });
 });

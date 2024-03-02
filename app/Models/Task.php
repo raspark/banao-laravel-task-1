@@ -26,4 +26,11 @@ class Task extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    // Accessor for the created_at attribute
+    public function getCreatedAtHumanAttribute()
+    {
+        return \Carbon\Carbon::parse($this->created_at)->diffForHumans();
+    }
+
 }

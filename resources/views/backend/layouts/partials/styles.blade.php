@@ -11,3 +11,5 @@
 <link href="{{ asset('assets/css/metisMenu.min.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('plugins/daterangepicker/daterangepicker.css') }}" rel="stylesheet" type="text/css" />
 <link href="{{ asset('assets/css/app.min.css') }}" rel="stylesheet" type="text/css" />
+{{-- custom css --}}
+<link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
